@@ -1,0 +1,125 @@
+/*Login layout*/
+.page-layout-admin-login {
+    background: #5680E9 !important;
+}
+
+.page-layout-admin-login .page-wrapper{
+    box-shadow: none !important;
+}
+
+.page-layout-admin-login .admin__legend{
+    color: #5680E9 !important;
+}
+
+a.action-forgotpassword{
+    color: #eb5202 !important;
+}
+
+footer.login-footer{
+    color: #fff;
+}
+
+/*Content*/
+a.logo{
+    background-color: #fff;
+}
+
+/*button primary*/
+.action-primary,
+.abs-action-primary,
+button.primary,
+.page-actions > button.action-primary,
+.page-actions .page-actions-buttons > button.action-primary,
+.page-actions > button.primary,
+.page-actions .page-actions-buttons > button.primary,
+.block-footer .action-add.primary,
+.page-actions > .block-footer .action-add.action-primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
+.page-actions > .block-footer .action-add.primary,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary,
+.page-actions-buttons button.ordersuccess-current {
+    background-color: #8860D0 !important;
+    border-color: #8860D0 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+/*button hover, active, focus*/
+.action-primary:hover,
+.action-primary:active,
+.action-primary:focus,
+.abs-action-primary:hover,
+.abs-action-primary:active,
+.abs-action-primary:focus,
+button.primary:hover,
+button.primary:active,
+button.primary:focus,
+.page-actions > button.action-primary:hover,
+.page-actions > button.action-primary:active,
+.page-actions > button.action-primary:focus,
+.page-actions .page-actions-buttons > button.action-primary:hover,
+.page-actions .page-actions-buttons > button.action-primary:active,
+.page-actions .page-actions-buttons > button.action-primary:focus,
+.page-actions > button.primary:hover,
+.page-actions > button.primary:active,
+.page-actions > button.primary:focus,
+.page-actions .page-actions-buttons > button.primary:hover,
+.page-actions .page-actions-buttons > button.primary:active,
+.page-actions .page-actions-buttons > button.primary:focus,
+.block-footer .action-add.primary:hover,
+.block-footer .action-add.primary:active,
+.block-footer .action-add.primary:focus,
+.page-actions > .block-footer .action-add.action-primary:hover,
+.page-actions > .block-footer .action-add.action-primary:active,
+.page-actions > .block-footer .action-add.action-primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.action-primary:focus,
+.page-actions > .block-footer .action-add.primary:hover,
+.page-actions > .block-footer .action-add.primary:active,
+.page-actions > .block-footer .action-add.primary:focus,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
+.page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
+    background-color: #5680E9 !important;
+    border-color: #5680E9 !important;
+}
+
+/*font primary color*/
+.page-layout-admin-login .admin__legend,
+.dashboard-totals-item:first-child .price,
+.dashboard-item-primary:first-child .dashboard-sales-value{
+    color: #8860D0 !important;
+}
+
+.menu-wrapper:before,
+.data-grid th,
+.admin__menu [class*='level-']:not(.level-0) a:hover {
+    background-color: #5680E9 !important;
+}
+
+.admin__menu .level-0>a{
+    color: #fff !important;
+}
+
+.admin__menu .level-0:hover>a,
+.admin__menu .level-0>.submenu,
+.admin__menu .level-0._active>a{
+    background-color: #5AB9EA !important;
+}
+
+.admin__menu .level-0>.submenu{
+    box-shadow: none !important;
+}
+
+.admin__menu .submenu .parent .submenu-group-title{
+    color: #fff !important;
+}
+
+.admin__menu .action-close:before{
+    color: #fff;
+}
+
+.tabs-horiz .ui-state-active .ui-tabs-anchor{
+    border-top: .4rem solid #8860D0 !important;
+}

@@ -1,0 +1,33 @@
+{
+    "name": "ecomteck/module-admin-theme",
+    "description": "Magento 2 extension allow change admin theme styles.",
+    "type": "magento2-module",
+    "version": "1.4.0",
+	"keywords": [
+        "magento 2",
+        "admin theme pro"
+    ],
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+	"homepage": "https://www.ecomteck.com/",
+    "support": {
+        "email": "ecomteck@gmail.com",
+        "issues": "https://github.com/ecomteck/module-admin-theme/issues"
+    },
+    "authors": [
+        {
+            "name": "Ecomteck",
+            "email": "ecomteck@gmail.com",
+            "homepage": "https://www.ecomteck.com/",
+            "role": "Owner"
+        }
+    ],
+    "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Ecomteck\\AdminTheme\\": ""
+    }
+  }
+}
