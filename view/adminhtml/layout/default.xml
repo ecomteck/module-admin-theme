@@ -20,9 +20,9 @@
  * @license     https://www.ecomteck.com/LICENSE.txt
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<head>
-		<css src="Ecomteck_AdminTheme::css/custom.css"/>
+		<css src="Ecomteck_AdminTheme::css/custom.css" order="102"/>
 	</head>
 	<body>
 		<referenceBlock name="logo">

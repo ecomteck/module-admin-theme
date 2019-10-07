@@ -1,18 +1,36 @@
+/* Varrible */
+
+:root {
+  --main-color: #8860D0;
+}
+
 /*Login layout*/
 .page-layout-admin-login {
-    background: #5680E9 !important;
+    background-color: #999999;
+    background-image: url(../images/bg-login-admin.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 
 .page-layout-admin-login .page-wrapper{
-    box-shadow: none !important;
+    border: 0;
+    border-radius: 5px;
 }
 
+.page-layout-admin-login .admin__field .admin__field-control input:hover{
+    border-color: #ced4da;
+}
+
+.page-layout-admin-login .admin__field .admin__field-control input:focus{
+    border-color: var(--main-color);
+}
 .page-layout-admin-login .admin__legend{
-    color: #5680E9 !important;
+    color: #5680E9;
 }
 
 a.action-forgotpassword{
-    color: #eb5202 !important;
+    color: #eb5202;
 }
 
 footer.login-footer{
@@ -38,13 +56,14 @@ button.primary,
 .page-actions > .block-footer .action-add.primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary,
 .page-actions-buttons button.ordersuccess-current {
-    background-color: #8860D0 !important;
-    border-color: #8860D0 !important;
-    color: #fff !important;
-    text-shadow: none !important;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff;
+    text-shadow: none;
+    border-radius:3px;
 }
 
-/*button hover, active, focus*/
+/* button hover, active, focus */
 .action-primary:hover,
 .action-primary:active,
 .action-primary:focus,
@@ -54,6 +73,9 @@ button.primary,
 button.primary:hover,
 button.primary:active,
 button.primary:focus,
+.action-primary:hover,
+.action-primary:active,
+.action-primary:focus,
 .page-actions > button.action-primary:hover,
 .page-actions > button.action-primary:active,
 .page-actions > button.action-primary:focus,
@@ -81,45 +103,125 @@ button.primary:focus,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
-    background-color: #5680E9 !important;
-    border-color: #5680E9 !important;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
 }
 
-/*font primary color*/
+.action-primary:hover, .action-primary:active, .action-primary:focus{
+  box-shadow: 0 8px 25px -8px var(--main-color);
+}
+
+/* Input, text area, select */
+.admin__control-text, .admin__control-select, .admin__control-multiselect, 
+.admin__control-file-label:before, .admin__control-textarea, .selectmenu, textarea,
+.admin__control-addon [class*='admin__control-'][class]~[class*='admin__addon-']:last-child:before, 
+[class*='adminhtml-giftwrapping-'] .field-base_price .admin__control-addon [class*='admin__control-'][class]~.addafter:last-child:before, 
+.ui-datepicker .ui-datepicker-title select, input, .admin__scope-old .control>input,
+.admin__scope-old textarea, .admin__scope-old select[multiple], .admin__scope-old select[size],
+.admin__scope-old select, .admin__scope-old input[type=text], .accordion .config input[type='password']{
+  background-color: #f8f9fa;
+  color: #47404f;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+}
+
+/* Input focus, text area focus, select focus */
+.page-wrapper .admin__scope-old input:focus,
+.page-wrapper .admin__scope-old textarea:focus,
+.page-wrapper .admin__control-text:focus,
+.page-wrapper .admin__control-select:focus, 
+.page-wrapper .admin__control-multiselect:focus,  
+.page-wrapper .admin__control-textarea:focus,
+.page-wrapper .admin__scope-old select:focus{
+    color: #665c70;
+    background-color: #fff;
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(102, 51, 153, 0.25);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* font primary color */
 .page-layout-admin-login .admin__legend,
 .dashboard-totals-item:first-child .price,
 .dashboard-item-primary:first-child .dashboard-sales-value{
-    color: #8860D0 !important;
+    color: var(--main-color);
 }
 
-.menu-wrapper:before,
-.data-grid th,
-.admin__menu [class*='level-']:not(.level-0) a:hover {
-    background-color: #5680E9 !important;
+/* Main Menu */
+.menu-wrapper:before, .data-grid th{
+    background-color: #fff;
+}
+
+.menu-wrapper .logo{height: 7rem;}
+
+.menu-wrapper .logo .logo-img{height: 3.5rem;}
+
+.menu-wrapper:before{box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);}
+
+.admin__menu .level-0>a{
+    border-bottom: 1px solid #dee2e6;
+}
+
+.admin__menu .level-0:first-child>a{
+    border-top: 1px solid #dee2e6;
+}
+
+.menu-wrapper .admin__menu .level-0:first-child>a:after, .admin__menu .item-partners>a:after{
+    background: none;
+    display: block;
+    margin: 0;
+    top: auto;
+    left: auto;
+}
+
+.menu-wrapper .admin__menu .level-0>a:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent;
+}
+
+.menu-wrapper .admin__menu .level-0:hover>a:after, .menu-wrapper .admin__menu .level-0._active>a:after{
+    border-color: transparent transparent var(--main-color) transparent;
 }
 
 .admin__menu .level-0>a{
-    color: #fff !important;
+    color: #47404f;
 }
 
 .admin__menu .level-0:hover>a,
 .admin__menu .level-0>.submenu,
 .admin__menu .level-0._active>a{
-    background-color: #5AB9EA !important;
+    background-color: #fff;
+    color: var(--main-color);
 }
 
 .admin__menu .level-0>.submenu{
-    box-shadow: none !important;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-.admin__menu .submenu .parent .submenu-group-title{
-    color: #fff !important;
-}
-
+.admin__menu .submenu-title, .admin__menu .submenu a,
+.admin__menu .submenu .parent .submenu-group-title,
 .admin__menu .action-close:before{
-    color: #fff;
+    color: #332e38;
 }
+
+.admin__menu .action-close:hover:before {
+    color: var(--main-color);
+}
+
+.admin__menu [class*='level-']:not(.level-0) a:hover{
+    background: #eee;
+}
+
+/*--------------------*/
 
 .tabs-horiz .ui-state-active .ui-tabs-anchor{
-    border-top: .4rem solid #8860D0 !important;
+    border-top: .4rem solid var(--main-color);
 }
