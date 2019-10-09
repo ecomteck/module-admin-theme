@@ -56,7 +56,7 @@ a, a:hover, .page-footer a,
 }
 
 /* button primary */
-.action-default, .action-primary, .action-secondary,
+.action-default, button, .action-primary, .action-secondary,
 .abs-action-primary, button.primary, .action-basic,
 .page-actions-buttons .action-primary,
 .action-advanced-reports,
@@ -65,6 +65,7 @@ a, a:hover, .page-footer a,
 .page-actions .page-actions-buttons > button.action-primary,
 .page-actions > button.primary,
 .page-actions .page-actions-buttons > button.primary,
+.page-actions .page-actions-buttons > button.action-secondary,
 .block-footer .action-add.primary,
 .page-actions > .block-footer .action-add.action-primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
@@ -81,12 +82,15 @@ a, a:hover, .page-footer a,
 /* button hover, active, focus */
 .action-basic:hover,
 .action-default:hover,
+.action-default:active,
+.action-default:focus,
 .action-primary:hover,
 .action-primary:active,
 .action-primary:focus,
 .abs-action-primary:hover,
 .abs-action-primary:active,
 .abs-action-primary:focus,
+button:hover,
 button.primary:hover,
 button.primary:active,
 button.primary:focus,
@@ -101,6 +105,9 @@ button.primary:focus,
 .page-actions .page-actions-buttons > button.action-primary:hover,
 .page-actions .page-actions-buttons > button.action-primary:active,
 .page-actions .page-actions-buttons > button.action-primary:focus,
+.page-actions .page-actions-buttons > button.action-secondary:hover,
+.page-actions .page-actions-buttons > button.action-secondary:active,
+.page-actions .page-actions-buttons > button.action-secondary:focus,
 .page-actions > button.primary:hover,
 .page-actions > button.primary:active,
 .page-actions > button.primary:focus,
@@ -128,6 +135,20 @@ button.primary:focus,
     box-shadow: 0 8px 25px -8px var(--main-color);
 }
 
+.admin__control-wysiwig .buttons-set button,
+.block-footer .action-add{
+    background-color: #ccc;
+    color: #47404f;
+    border-color: #ccc;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.admin__control-wysiwig .buttons-set button:hover,
+.block-footer .action-add:hover{
+    box-shadow: 0 8px 25px -8px #bbb;
+}
+
 .data-grid-filters-action-wrap .action-default:before{color: white;}
 
 /* Input, text area, select */
@@ -144,8 +165,28 @@ button.primary:focus,
   border-radius: 4px;
 }
 
+.selectmenu-items li:last-child .selectmenu-item-action,
+.selectmenu-items li:last-child .selectmenu-item-action:hover{
+    color: var(--main-color);
+}
+
 .admin__control-text:hover, .admin__control-textarea:hover,
-.admin__control-select:hover, .ui-datepicker .ui-datepicker-title select:hover{border-color: #ced4da;}
+.admin__control-select:hover, .ui-datepicker .ui-datepicker-title select:hover{
+    border-color: #ced4da;
+}
+
+.action-select-wrap._active .action-select,
+.action-menu, .abs-action-menu .action-submenu, 
+.action-menu .action-submenu, .actions-split .dropdown-menu .action-submenu, 
+.actions-split .action-menu .action-submenu,
+.action-select-wrap._active .action-select:before,
+.selectmenu._active, .selectmenu-items,
+.selectmenu._active .selectmenu-toggle:before,
+.action-multicheck-wrap._active .admin__control-checkbox+label:before,
+.action-multicheck-wrap._active .action-multicheck-toggle,
+.action-multicheck-wrap .action-multicheck-toggle:focus{
+    border-color: var(--main-color);
+}
 
 /* Input focus, text area focus, select focus */
 .page-wrapper .admin__scope-old input:focus,
@@ -154,7 +195,8 @@ button.primary:focus,
 .page-wrapper .admin__control-select:focus, 
 .page-wrapper .admin__control-multiselect:focus,  
 .page-wrapper .admin__control-textarea:focus,
-.page-wrapper .admin__scope-old select:focus{
+.page-wrapper .admin__scope-old select:focus,
+textarea:focus{
     color: #665c70;
     background-color: #fff;
     border-color: var(--main-color);
@@ -170,11 +212,14 @@ button.primary:focus,
     color: var(--main-color);
 }
 
-/* Page Header */
+/* Header */
 .page-header .admin__action-dropdown.active,
-.admin__action-dropdown-menu, 
+.admin__action-dropdown-menu, .search-global-field._active .search-global-input,
 .admin__data-grid-actions-wrap .admin__action-dropdown-wrap._active .admin__action-dropdown, 
-.admin__data-grid-actions-wrap .admin__action-dropdown-wrap._active .admin__action-dropdown-menu{
+.admin__data-grid-actions-wrap .admin__action-dropdown-wrap._active .admin__action-dropdown-menu,
+.abs-action-menu, .actions-split .dropdown-menu, .actions-split .action-menu,
+.actions-split .abs-action-menu .action-submenu,
+.actions-split .action-menu .action-submenu{
     border-color: var(--main-color);
 }
 
@@ -184,6 +229,29 @@ button.primary:focus,
 
 .admin-user .admin__action-dropdown-menu>li>a:hover{
     background-color: #eee;
+}
+
+.actions-split.active, .actions-split._active, .actions-split:hover{
+    box-shadow: none;
+}
+
+.page-actions .actions-split,
+.actions-split.active .action-toggle.action-primary,
+.actions-split._active .action-toggle.action-primary,
+.actions-split.active .action-toggle.primary,
+.actions-split._active .action-toggle.primary{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.page-actions .actions-split{
+    border-radius: 4px;
+}
+
+.page-actions .actions-split .action-toggle{
+    border: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 4px 4px 0;
 }
 
 /* Main Menu */
@@ -273,10 +341,10 @@ button.primary:focus,
 .dashboard-diagram-container,
 .dashboard-totals,
 .dashboard-store-stats,
-.admin__page-section,
 .admin__fieldset-wrapper,
 .customer-index-edit .fieldset-wrapper,
-.admin__scope-old{
+.adminhtml-system_config-edit .admin__scope-old,
+.admin__old{
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -285,7 +353,7 @@ button.primary:focus,
 }
 
 .customer-index-edit .fieldset-wrapper .fieldset-wrapper,
-.admin__scope-old, .fieldset-wrapper{
+.admin__old .fieldset-wrapper, .adminhtml-dashboard-index .admin__old{
     box-shadow: none;
     padding: 0;
 }
@@ -317,6 +385,12 @@ button.primary:focus,
 .dashboard-store-stats .tabs-horiz{
     background: transparent;
     border: 0;
+}
+
+.dashboard-container .ui-tabs-panel{
+    padding: 2rem 0;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .tabs-horiz .ui-tabs-anchor {
@@ -378,4 +452,63 @@ button.primary:focus,
 
 .data-grid-filters-action-wrap .action-default._active:after{
     background: none;
+}
+
+/* Main Content */
+#sales_order_view_tabs,
+#system_config_tabs,
+.admin__page-nav,
+.categories-side-col,
+.ui-tabs-panel{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 3rem;
+    border: 0;
+}
+
+#system_config_tabs, #sales_order_view_tabs,
+.admin__page-nav{
+    padding: 0;
+    overflow: hidden;
+}
+
+.adminhtml-system_config-edit .admin__page-nav{
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+.admin__page-nav-title{
+    padding: 1.8rem 2rem;
+}
+
+.admin__page-nav-item{
+    margin: 0;
+}
+
+.admin__page-nav-link{
+    padding: 1.8rem 2rem 2rem 1.7rem;
+    margin: 0;
+    border: 0;
+}
+
+.admin__page-nav-item._active, .admin__page-nav-item.ui-state-active,
+.ui-datepicker:before{
+    border-color: var(--main-color);
+}
+
+.admin__page-nav-item._active .admin__page-nav-link,
+.admin__page-nav-item.ui-state-active .admin__page-nav-link{border-right: 0;}
+
+.admin__page-nav-title._collapsible:hover,
+.admin__page-nav._collapsed._show ._collapsible{
+    background: var(--main-color);
+    color: white;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker .ui-datepicker-buttonpane .block-footer .action-add{
+    color: var(--main-color);
 }
