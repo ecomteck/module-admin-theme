@@ -1,65 +1,113 @@
+/* Variable */
+
+:root {
+  --main-color: #8860D0;
+}
+
 /*Login layout*/
 .page-layout-admin-login {
-    background: #5680E9 !important;
+    background-color: #999999;
+    background-image: url(../images/bg-login-admin.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 
 .page-layout-admin-login .page-wrapper{
-    box-shadow: none !important;
+    border: 0;
+    border-radius: 5px;
 }
 
+.page-layout-admin-login .admin__field .admin__field-control input:hover{
+    border-color: #ced4da;
+}
+
+.page-layout-admin-login .admin__field .admin__field-control input:focus{
+    border-color: var(--main-color);
+}
 .page-layout-admin-login .admin__legend{
-    color: #5680E9 !important;
+    color: #5680E9;
 }
 
 a.action-forgotpassword{
-    color: #eb5202 !important;
+    color: #eb5202;
 }
 
 footer.login-footer{
     color: #fff;
 }
 
-/*Content*/
+/* Content */
 a.logo{
     background-color: #fff;
 }
 
-/*button primary*/
-.action-primary,
-.abs-action-primary,
-button.primary,
+/* link */
+a, a:hover, .page-footer a,
+.page-footer a:hover,
+.abs-action-button-as-link,
+.action-additional,
+.data-grid .action-delete,
+.abs-action-button-as-link:hover,
+.action-additional:hover,
+.data-grid .action-delete:hover,
+.action-tertiary, .action-tertiary:hover{
+    color: var(--main-color);
+}
+
+/* button primary */
+.action-default, button, .action-primary, .action-secondary,
+.abs-action-primary, button.primary, .action-basic,
+.page-actions-buttons .action-primary,
+.action-advanced-reports,
+.action-primary .page-actions .actions-split,
 .page-actions > button.action-primary,
 .page-actions .page-actions-buttons > button.action-primary,
 .page-actions > button.primary,
 .page-actions .page-actions-buttons > button.primary,
+.page-actions .page-actions-buttons > button.action-secondary,
 .block-footer .action-add.primary,
 .page-actions > .block-footer .action-add.action-primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
 .page-actions > .block-footer .action-add.primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary,
 .page-actions-buttons button.ordersuccess-current {
-    background-color: #8860D0 !important;
-    border-color: #8860D0 !important;
-    color: #fff !important;
-    text-shadow: none !important;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff;
+    text-shadow: none;
+    border-radius: 4px;
 }
 
-/*button hover, active, focus*/
+/* button hover, active, focus */
+.action-basic:hover,
+.action-default:hover,
+.action-default:active,
+.action-default:focus,
 .action-primary:hover,
 .action-primary:active,
 .action-primary:focus,
 .abs-action-primary:hover,
 .abs-action-primary:active,
 .abs-action-primary:focus,
+button:hover,
 button.primary:hover,
 button.primary:active,
 button.primary:focus,
+.page-actions-buttons .action-primary:hover,
+.action-advanced-reports:hover,
+.action-primary .page-actions .actions-split:hover,
+.action-secondary:hover, .action-secondary:active, 
+.action-secondary:focus,
 .page-actions > button.action-primary:hover,
 .page-actions > button.action-primary:active,
 .page-actions > button.action-primary:focus,
 .page-actions .page-actions-buttons > button.action-primary:hover,
 .page-actions .page-actions-buttons > button.action-primary:active,
 .page-actions .page-actions-buttons > button.action-primary:focus,
+.page-actions .page-actions-buttons > button.action-secondary:hover,
+.page-actions .page-actions-buttons > button.action-secondary:active,
+.page-actions .page-actions-buttons > button.action-secondary:focus,
 .page-actions > button.primary:hover,
 .page-actions > button.primary:active,
 .page-actions > button.primary:focus,
@@ -81,45 +129,386 @@ button.primary:focus,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:hover,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:active,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary:focus{
-    background-color: #5680E9 !important;
-    border-color: #5680E9 !important;
+    background-color: var(--main-color);
+    color: white;
+    border-color: var(--main-color);
+    box-shadow: 0 8px 25px -8px var(--main-color);
 }
 
-/*font primary color*/
+.admin__control-wysiwig .buttons-set button,
+.block-footer .action-add{
+    background-color: #ccc;
+    color: #47404f;
+    border-color: #ccc;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.admin__control-wysiwig .buttons-set button:hover,
+.block-footer .action-add:hover{
+    box-shadow: 0 8px 25px -8px #bbb;
+}
+
+.data-grid-filters-action-wrap .action-default:before{color: white;}
+
+/* Input, text area, select */
+.admin__control-text, .admin__control-select, .admin__control-multiselect, 
+.admin__control-file-label:before, .admin__control-textarea, .selectmenu, textarea,
+.admin__control-addon [class*='admin__control-'][class]~[class*='admin__addon-']:last-child:before, 
+[class*='adminhtml-giftwrapping-'] .field-base_price .admin__control-addon [class*='admin__control-'][class]~.addafter:last-child:before, 
+.ui-datepicker .ui-datepicker-title select, input, .admin__scope-old .control>input,
+.admin__scope-old textarea, .admin__scope-old select[multiple], .admin__scope-old select[size],
+.admin__scope-old select, .admin__scope-old input[type=text], .accordion .config input[type='password']{
+  background-color: #f8f9fa;
+  color: #47404f;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.selectmenu-items li:last-child .selectmenu-item-action,
+.selectmenu-items li:last-child .selectmenu-item-action:hover{
+    color: var(--main-color);
+}
+
+.admin__control-text:hover, .admin__control-textarea:hover,
+.admin__control-select:hover, .ui-datepicker .ui-datepicker-title select:hover{
+    border-color: #ced4da;
+}
+
+.action-select-wrap._active .action-select,
+.action-menu, .abs-action-menu .action-submenu, 
+.action-menu .action-submenu, .actions-split .dropdown-menu .action-submenu, 
+.actions-split .action-menu .action-submenu,
+.action-select-wrap._active .action-select:before,
+.selectmenu._active, .selectmenu-items,
+.selectmenu._active .selectmenu-toggle:before,
+.action-multicheck-wrap._active .admin__control-checkbox+label:before,
+.action-multicheck-wrap._active .action-multicheck-toggle,
+.action-multicheck-wrap .action-multicheck-toggle:focus{
+    border-color: var(--main-color);
+}
+
+/* Input focus, text area focus, select focus */
+.page-wrapper .admin__scope-old input:focus,
+.page-wrapper .admin__scope-old textarea:focus,
+.page-wrapper .admin__control-text:focus,
+.page-wrapper .admin__control-select:focus, 
+.page-wrapper .admin__control-multiselect:focus,  
+.page-wrapper .admin__control-textarea:focus,
+.page-wrapper .admin__scope-old select:focus,
+textarea:focus{
+    color: #665c70;
+    background-color: #fff;
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(102, 51, 153, 0.25);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* font primary color */
 .page-layout-admin-login .admin__legend,
 .dashboard-totals-item:first-child .price,
 .dashboard-item-primary:first-child .dashboard-sales-value{
-    color: #8860D0 !important;
+    color: var(--main-color);
 }
 
-.menu-wrapper:before,
-.data-grid th,
-.admin__menu [class*='level-']:not(.level-0) a:hover {
-    background-color: #5680E9 !important;
+/* Header */
+.page-header .admin__action-dropdown.active,
+.admin__action-dropdown-menu, .search-global-field._active .search-global-input,
+.admin__data-grid-actions-wrap .admin__action-dropdown-wrap._active .admin__action-dropdown, 
+.admin__data-grid-actions-wrap .admin__action-dropdown-wrap._active .admin__action-dropdown-menu,
+.abs-action-menu, .actions-split .dropdown-menu, .actions-split .action-menu,
+.actions-split .abs-action-menu .action-submenu,
+.actions-split .action-menu .action-submenu{
+    border-color: var(--main-color);
+}
+
+.admin-user .admin__action-dropdown-menu>li>a{
+    margin-top: 1px;
+}
+
+.admin-user .admin__action-dropdown-menu>li>a:hover{
+    background-color: #eee;
+}
+
+.actions-split.active, .actions-split._active, .actions-split:hover{
+    box-shadow: none;
+}
+
+.page-actions .actions-split,
+.actions-split.active .action-toggle.action-primary,
+.actions-split._active .action-toggle.action-primary,
+.actions-split.active .action-toggle.primary,
+.actions-split._active .action-toggle.primary{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.page-actions .actions-split{
+    border-radius: 4px;
+}
+
+.page-actions .actions-split .action-toggle{
+    border: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Main Menu */
+.menu-wrapper:before, .data-grid th{
+    background-color: #fff;
+}
+
+.menu-wrapper .logo{
+    height: 7rem;
+}
+
+.menu-wrapper .logo .logo-img{
+    height: 3.5rem;
+}
+
+.menu-wrapper:before{
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .admin__menu .level-0>a{
-    color: #fff !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.admin__menu .level-0:first-child>a{
+    border-top: 1px solid #dee2e6;
+}
+
+.menu-wrapper .admin__menu .level-0:first-child>a:after, .admin__menu .item-partners>a:after{
+    background: none;
+    display: block;
+    margin: 0;
+    top: auto;
+    left: auto;
+}
+
+.menu-wrapper .admin__menu .level-0>a:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent;
+}
+
+.menu-wrapper .admin__menu .level-0:hover>a:after, .menu-wrapper .admin__menu .level-0._active>a:after{
+    border-color: transparent transparent var(--main-color) transparent;
+}
+
+.admin__menu .level-0>a{
+    color: #47404f;
 }
 
 .admin__menu .level-0:hover>a,
 .admin__menu .level-0>.submenu,
 .admin__menu .level-0._active>a{
-    background-color: #5AB9EA !important;
+    background-color: #fff;
+    color: var(--main-color);
 }
 
 .admin__menu .level-0>.submenu{
-    box-shadow: none !important;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-.admin__menu .submenu .parent .submenu-group-title{
-    color: #fff !important;
-}
-
+.admin__menu .submenu-title, .admin__menu .submenu a,
+.admin__menu .submenu .parent .submenu-group-title,
 .admin__menu .action-close:before{
-    color: #fff;
+    color: #332e38;
 }
 
-.tabs-horiz .ui-state-active .ui-tabs-anchor{
-    border-top: .4rem solid #8860D0 !important;
+.admin__menu .action-close:hover:before {
+    color: var(--main-color);
+}
+
+.admin__menu [class*='level-']:not(.level-0) a:hover{
+    background: #eee;
+}
+
+/* Dashboard Page */
+
+.dashboard-item,
+.page-main-actions:not(._hidden),
+.message-system-inner,
+.dashboard-advanced-reports,
+.dashboard-diagram-container,
+.dashboard-totals,
+.dashboard-store-stats,
+.admin__fieldset-wrapper,
+.customer-index-edit .fieldset-wrapper,
+.adminhtml-system_config-edit .admin__scope-old,
+.admin__old{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 0;
+    padding: 20px;
+}
+
+.customer-index-edit .fieldset-wrapper .fieldset-wrapper,
+.admin__old .fieldset-wrapper, .adminhtml-dashboard-index .admin__old{
+    box-shadow: none;
+    padding: 0;
+}
+
+.store-switcher .admin__action-dropdown{
+    background: #eee;
+    border-radius: 4px;
+}
+
+.store-switcher .dropdown .dropdown-menu{
+    border-radius: 4px;
+    border-color: var(--main-color);
+}
+
+.dashboard-item-title, .dashboard-advanced-reports-title{
+    padding-bottom: 5px;
+}
+
+.dashboard-secondary .dashboard-item,
+.dashboard-diagram-container,
+.dashboard-totals{min-height: 100px;}
+
+.dashboard-totals{
+    margin: 3rem 0;
+}
+
+.dashboard-store-stats .dashboard-store-stats-content, 
+.dashboard-container .ui-tabs-panel, .tabs-horiz .ui-state-default, 
+.dashboard-store-stats .tabs-horiz{
+    background: transparent;
+    border: 0;
+}
+
+.dashboard-container .ui-tabs-panel{
+    padding: 2rem 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.tabs-horiz .ui-tabs-anchor {
+    border-radius: 4px;
+    padding: 1rem 1.8rem 1rem;
+}
+
+.dashboard-store-stats .tabs-horiz .ui-state-active .ui-tabs-anchor,
+.tabs-horiz .ui-state-active .ui-tabs-anchor
+{
+    background: var(--main-color);
+    color: white;
+    border: 0;
+}
+
+.ui-tabs-panel{
+    padding: 2rem 0;
+}
+
+.admin__page-section{
+    margin-bottom: 3rem;
+}
+
+.admin__scope-old .fieldset-wrapper>.fieldset-wrapper-title,
+.admin__scope-old .fieldset>.legend{
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Table */
+.data-grid .data-grid-th{
+    color: #47404f;
+}
+
+.data-grid .data-grid-th._sortable:focus,
+.data-grid .data-grid-th._sortable:hover{
+    background-color: transparent;
+}
+
+.data-grid td .action-select,
+.data-grid td .action-select:hover{
+    color: var(--main-color);
+}
+
+.data-grid td .action-select:after,
+.data-grid td .action-select:hover:after{
+    border-color: var(--main-color) transparent transparent transparent;
+}
+
+.data-grid tr:hover td{
+    background: #f8f9fa;
+}
+
+.data-grid-filters-action-wrap .action-default._active{
+    background: var(--main-color);
+    border-color: var(--main-color);
+    margin: 0;
+    padding-bottom: .7rem;
+}
+
+.data-grid-filters-action-wrap .action-default._active:after{
+    background: none;
+}
+
+/* Main Content */
+#sales_order_view_tabs,
+#system_config_tabs,
+.admin__page-nav,
+.categories-side-col,
+.ui-tabs-panel{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 3rem;
+    border: 0;
+}
+
+#system_config_tabs, #sales_order_view_tabs,
+.admin__page-nav{
+    padding: 0;
+    overflow: hidden;
+}
+
+.adminhtml-system_config-edit .admin__page-nav{
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+.admin__page-nav-title{
+    padding: 1.8rem 2rem;
+}
+
+.admin__page-nav-item{
+    margin: 0;
+}
+
+.admin__page-nav-link{
+    padding: 1.8rem 2rem 2rem 1.7rem;
+    margin: 0;
+    border: 0;
+}
+
+.admin__page-nav-item._active, .admin__page-nav-item.ui-state-active,
+.ui-datepicker:before{
+    border-color: var(--main-color);
+}
+
+.admin__page-nav-item._active .admin__page-nav-link,
+.admin__page-nav-item.ui-state-active .admin__page-nav-link{border-right: 0;}
+
+.admin__page-nav-title._collapsible:hover,
+.admin__page-nav._collapsed._show ._collapsible{
+    background: var(--main-color);
+    color: white;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker .ui-datepicker-buttonpane .block-footer .action-add{
+    color: var(--main-color);
 }
