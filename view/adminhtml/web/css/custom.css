@@ -29,10 +29,6 @@
     color: #5680E9;
 }
 
-a.action-forgotpassword{
-    color: #eb5202;
-}
-
 footer.login-footer{
     color: #fff;
 }
@@ -51,12 +47,13 @@ a, a:hover, .page-footer a,
 .abs-action-button-as-link:hover,
 .action-additional:hover,
 .data-grid .action-delete:hover,
-.action-tertiary, .action-tertiary:hover{
+.action-tertiary, .action-tertiary:hover,
+.message-warning:before{
     color: var(--main-color);
 }
 
 /* button primary */
-.action-default, button, .action-primary, .action-secondary,
+.action-default, .action-primary, .action-secondary,
 .abs-action-primary, button.primary, .action-basic,
 .page-actions-buttons .action-primary,
 .action-advanced-reports,
@@ -71,12 +68,21 @@ a, a:hover, .page-footer a,
 .page-actions .page-actions-buttons > .block-footer .action-add.action-primary,
 .page-actions > .block-footer .action-add.primary,
 .page-actions .page-actions-buttons > .block-footer .action-add.primary,
-.page-actions-buttons button.ordersuccess-current {
+.page-actions-buttons button.ordersuccess-current,
+.steps-wizard .select-attributes-actions .action-default,
+.attribute-popup-actions .page-actions-buttons>button.action-default.primary,
+popup-actions .page-actions-buttons>button.action-default.primary,
+.modal-popup .modal-footer .action-primary{
     background-color: var(--main-color);
     border-color: var(--main-color);
     color: #fff;
     text-shadow: none;
     border-radius: 4px;
+}
+
+.modal-popup .modal-footer .action-primary{
+    background: var(--main-color)!important;
+    border-color: var(--main-color)!important;
 }
 
 /* button hover, active, focus */
@@ -90,7 +96,6 @@ a, a:hover, .page-footer a,
 .abs-action-primary:hover,
 .abs-action-primary:active,
 .abs-action-primary:focus,
-button:hover,
 button.primary:hover,
 button.primary:active,
 button.primary:focus,
@@ -99,6 +104,10 @@ button.primary:focus,
 .action-primary .page-actions .actions-split:hover,
 .action-secondary:hover, .action-secondary:active, 
 .action-secondary:focus,
+popup-actions .page-actions-buttons>button.action-default.primary:hover,
+.modal-popup .modal-footer .action-primary:hover,
+.attribute-popup-actions .page-actions-buttons>button.action-default.primary:hover,
+.steps-wizard .select-attributes-actions .action-default:hover,
 .page-actions > button.action-primary:hover,
 .page-actions > button.action-primary:active,
 .page-actions > button.action-primary:focus,
@@ -151,6 +160,30 @@ button.primary:focus,
 
 .data-grid-filters-action-wrap .action-default:before{color: white;}
 
+.abs-action-wrap-triangle-right .action-primary:hover:after,
+.abs-action-wrap-triangle-right .action-primary:active:after,
+.abs-action-wrap-triangle-right .action-primary:focus:after,
+.action-wrap-next .action-primary:hover:after,
+.action-wrap-next .action-primary:active:after,
+.action-wrap-next .action-primary:focus:after{
+    border-left-color: var(--main-color);
+}
+
+.abs-action-wrap-triangle-left .action-default:before,
+.action-wrap-prev .action-default:before{
+    border-right-color: var(--main-color);
+}
+
+.abs-action-tertiary, button.tertiary,
+.ui-dialog .action-close,
+.attribute-popup-actions .action-default.reset,
+.modal-popup .modal-footer .action-secondary,
+.popup-window .magento_buttons .cancel_button,
+.fade .actions .cancel,
+.block-footer .action-add.tertiary{
+    color: var(--main-color)!important;
+}
+
 /* Input, text area, select */
 .admin__control-text, .admin__control-select, .admin__control-multiselect, 
 .admin__control-file-label:before, .admin__control-textarea, .selectmenu, textarea,
@@ -164,6 +197,8 @@ button.primary:focus,
   border: 1px solid #ced4da;
   border-radius: 4px;
 }
+
+.selectmenu-value input[type='text']{border: 0;}
 
 .selectmenu-items li:last-child .selectmenu-item-action,
 .selectmenu-items li:last-child .selectmenu-item-action:hover{
@@ -191,11 +226,20 @@ button.primary:focus,
 /* Input focus, text area focus, select focus */
 .page-wrapper .admin__scope-old input:focus,
 .page-wrapper .admin__scope-old textarea:focus,
-.page-wrapper .admin__control-text:focus,
 .page-wrapper .admin__control-select:focus, 
 .page-wrapper .admin__control-multiselect:focus,  
 .page-wrapper .admin__control-textarea:focus,
 .page-wrapper .admin__scope-old select:focus,
+.admin__control-text:focus, .admin__control-select:focus,
+.admin__control-multiselect:focus,
+.admin__control-file:active+.admin__control-file-label:before,
+.admin__control-file:focus+.admin__control-file-label:before,
+.admin__control-textarea:focus,
+.admin__control-addon [class*='admin__control-'][class]:focus~[class*='admin__addon-']:last-child:before,
+.selectmenu._focus, .selectmenu._focus .selectmenu-toggle:before,
+[class*='adminhtml-giftwrapping-'] .field-base_price .admin__control-addon [class*='admin__control-'][class]:focus~.addafter:last-child:before,
+.ui-datepicker .ui-datepicker-title select:focus,
+.admin__control-text:focus,
 textarea:focus{
     color: #665c70;
     background-color: #fff;
@@ -353,7 +397,9 @@ textarea:focus{
 }
 
 .customer-index-edit .fieldset-wrapper .fieldset-wrapper,
-.admin__old .fieldset-wrapper, .adminhtml-dashboard-index .admin__old{
+.admin__old .fieldset-wrapper, .adminhtml-dashboard-index .admin__old,
+.order-payment-method.admin__fieldset-wrapper,
+.dotdigitalgroup_email-dashboard-index .message-system-inner{
     box-shadow: none;
     padding: 0;
 }
@@ -381,10 +427,13 @@ textarea:focus{
 }
 
 .dashboard-store-stats .dashboard-store-stats-content, 
-.dashboard-container .ui-tabs-panel, .tabs-horiz .ui-state-default, 
+.dashboard-container .ui-tabs-panel,
+.sales-order-view .ui-tabs-panel,
+.tabs-horiz .ui-state-default, 
 .dashboard-store-stats .tabs-horiz{
     background: transparent;
     border: 0;
+    box-shadow: none;
 }
 
 .dashboard-container .ui-tabs-panel{
@@ -511,4 +560,9 @@ textarea:focus{
 .ui-datepicker .ui-datepicker-buttonpane button,
 .ui-datepicker .ui-datepicker-buttonpane .block-footer .action-add{
     color: var(--main-color);
+}
+
+.abs-action-wrap-triangle-right .action-primary:after,
+.action-wrap-next .action-primary:after{
+    border-color: transparent transparent transparent var(--main-color);
 }
